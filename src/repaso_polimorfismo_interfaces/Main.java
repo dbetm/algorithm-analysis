@@ -1,4 +1,4 @@
-package polimorfismo_e_interfaces;
+package repaso_polimorfismo_interfaces;
 
 import java.util.ArrayList;
 
