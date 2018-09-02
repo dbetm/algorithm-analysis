@@ -1,7 +1,7 @@
 package ordenamiento;
 
  /* @author david */
-public class Bubble {
+public class Bubble implements SortAlgorithm {
     private long initTime;
     private long endTime;
     private long totalTime;
@@ -12,15 +12,16 @@ public class Bubble {
         this.totalTime = 0;
     }
     
+    @Override
     public void sort(double[] data) {
         this.initTime = System.currentTimeMillis();
         double temp;
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 1; i < data.length; i++) {
             for (int j = 0; j < data.length - 1; j++) {
-                // Ask... 
-                if(data[j] > data[j +1]) {
+                // Se compara
+                if(data[j] > data[j+1]) {
                     temp = data[j];
-                    data[j] = data[j + 1];
+                    data[j] = data[j+1];
                     data[j + 1] = temp;
                 }
             }
@@ -29,6 +30,7 @@ public class Bubble {
         this.totalTime = this.endTime - this.initTime;
     }
 
+    @Override
     public long getTotalTime() {
         return totalTime;
     }

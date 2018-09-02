@@ -3,7 +3,7 @@ package ordenamiento;
  *
  * @author david
  */
-public class InsertSort {
+public class InsertSort implements SortAlgorithm{
     private long initTime;
     private long endTime;
     private long totalTime;
@@ -14,10 +14,11 @@ public class InsertSort {
         this.totalTime = 0;
     }
     
+    @Override
     public void sort(double[] data) {
+        this.initTime = System.currentTimeMillis();
         double key;
         int j;
-        this.initTime = System.currentTimeMillis();
         for (int i = 1; i < data.length; i++) {
             key = data[i];
             j = i - 1;
@@ -31,11 +32,11 @@ public class InsertSort {
             // Insertamos la llave en donde corresponde
             data[j + 1] = key;
         }
-        
         this.endTime = System.currentTimeMillis();
         this.totalTime = this.endTime - this.initTime;
     }
 
+    @Override
     public long getTotalTime() {
         return totalTime;
     }
