@@ -18,14 +18,10 @@ public class Bubble implements SortAlgorithm {
     public void sort(double[] data) {
         this.initTime = System.currentTimeMillis();
         double temp;
-        int cont = 0;
         for (int i = 1; i < data.length; i++) {
-            cont += 3;
             for (int j = 0; j < data.length - 1; j++) {
-                cont += 8;
                 // Se compara
                 if(data[j] > data[j+1]) {
-                    cont += 9;
                     temp = data[j];
                     data[j] = data[j+1];
                     data[j + 1] = temp;
@@ -34,7 +30,6 @@ public class Bubble implements SortAlgorithm {
         }
         this.endTime = System.currentTimeMillis();
         this.totalTime = this.endTime - this.initTime;
-        System.out.println("Número de operaciones: " + cont);
     }
 
     @Override
