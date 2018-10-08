@@ -27,7 +27,7 @@ public class Prac3_quickSort {
         
         // Arreglo para guardar los valores generados aleatoriamente
         double[] datos;
-        // Arreglos de puntos para poder graficas
+        // Arreglos de puntos para poder graficar
         Punto[] puntosMerge = new Punto[n];
         Punto[] puntosBubble = new Punto[n];
         Punto[] puntosInsert = new Punto[n];
@@ -39,11 +39,12 @@ public class Prac3_quickSort {
                 // Caso medio
             //datos = GenerarDatos.generarDatosAleatorios(i, 501);
                 // Mejor caso
-            datos = GenerarDatos.generarDatosMejorCaso(i);
+            //datos = GenerarDatos.generarDatosMejorCaso(i);
                 // Peor caso
-            //datos = GenerarDatos.generarDatosPeorCaso(i);
+            datos = GenerarDatos.generarDatosPeorCaso(i);
             
             // Se ordenan, y se guarda el punto (n, tiempo).
+       
             merge.sort(datos.clone());
             puntosMerge[i] = new Punto(i, merge.getTotalTime());
             
@@ -55,8 +56,9 @@ public class Prac3_quickSort {
             
             optBubble.sort(datos.clone());
             puntosOptBubble[i] = new Punto(i, optBubble.getTotalTime());
-            
+    
             qs.sort(datos.clone());
+            
             puntosQuickSort[i] = new Punto(i, qs.getTotalTime());
             
             System.out.println(i);

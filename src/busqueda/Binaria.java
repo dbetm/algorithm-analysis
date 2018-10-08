@@ -46,7 +46,7 @@ public class Binaria implements SearchAlgorithm {
         if(left < right) {
             int center = (left + right) / 2;
             binarySearchV2(chars, left, center, c, left);
-            binarySearchV2(chars, center + 1, right, c, center + 1);
+            if(this.ans == -1) binarySearchV2(chars, center + 1, right, c, center + 1);
         }
     }
 
@@ -57,7 +57,7 @@ public class Binaria implements SearchAlgorithm {
     
     public static void main(String []args) {
         Binaria b = new Binaria();
-        int pos = b.buscar(new char[]{'!', '!', '!', '!', '!', '!', '!', '#'}, '#');
+        int pos = b.buscar(new char[]{'#', '!', '!', '!', '!', '!', '!', '#'}, '#');
         System.out.println(pos);
     }
     

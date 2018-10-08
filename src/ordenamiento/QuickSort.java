@@ -28,7 +28,7 @@ public class QuickSort implements SortAlgorithm {
             this.endTime = System.currentTimeMillis();
         }
         // Se calcula el tiempo total
-        this.totalTime = this.initTime - this.initTime;
+        this.totalTime = this.endTime - this.initTime;
     }
     
     public void ordenar(double[] tmpArray, int left, int right) {
@@ -65,7 +65,7 @@ public class QuickSort implements SortAlgorithm {
         // ## Caso base
         // Se ordena el sub-arreglo de la izquierda
         if(left < r - 1)
-            ordenar(tmpArray, left, right - 1);
+            ordenar(tmpArray, left, r - 1);
         // Se ordena el sub-arreglo de la derecha
         if(r + 1 < right)
             ordenar(tmpArray, r + 1, right);
@@ -74,6 +74,13 @@ public class QuickSort implements SortAlgorithm {
     @Override
     public long getTotalTime() {
         return this.totalTime;
+    }
+    
+    public static void main(String []args) {
+        QuickSort qs = new QuickSort();
+        double[] datos = tools.GenerarDatos.generarDatosAleatorios(10000, 501);
+        qs.sort(datos);
+        System.out.println("");
     }
     
     
