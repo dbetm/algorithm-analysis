@@ -13,9 +13,12 @@ public class GenCharArray {
     public static char[] generarArregloCasoMedio(int n, char c) {
         char[] ans = new char[n];
         
-        for (int i = 0; i < n; i++) ans[i] = (char)(ran.nextInt(90) + 36);
+        for (int i = 0; i < n; i++) {
+            ans[i] = (char)(ran.nextInt(93) + 33);
+            // Se comprueba que no haya generado el char que se va insertar => c
+            if(ans[i] == c) i--;
+        }
         // Inserta c al azar
-        System.out.println(n);
         int pos = ran.nextInt(n);
         ans[pos] = c;
         
@@ -27,7 +30,7 @@ public class GenCharArray {
         char[] ans = new char[n];
         // Se agrega el carácter c al inicio
         ans[0] = c;
-        for (int i = 1; i < n; i++) ans[i] = (char)(ran.nextInt(90) + 36);
+        for (int i = 1; i < n; i++) ans[i] = (char)(ran.nextInt(93) + 33);
         
         return ans;
     }
@@ -36,7 +39,11 @@ public class GenCharArray {
         char[] ans = new char[n];
         // Se agrega el carácter c al final
         ans[n - 1] = c;
-        for (int i = 0; i < n - 1; i++) ans[i] = (char)(ran.nextInt(90) + 36);
+        for (int i = 0; i < n - 1; i++) {
+            ans[i] = (char)(ran.nextInt(93) + 33);
+            // Se comprueba que no haya generado el char que se inserta => c
+            if(ans[i] == c) i--;
+        }
         
         return ans;
     }
@@ -57,7 +64,5 @@ public class GenCharArray {
         display(data);
         data = generarArregloPeorCaso(8, '#');
         display(data);
-    }
-
-    
+    } 
 }
