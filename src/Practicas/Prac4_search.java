@@ -40,7 +40,6 @@ public class Prac4_search {
             datos = GenCharArray.generarArregloPeorCaso(i, c);
             
             // Se busca, y se guarda el punto (n, tiempo).
-       
             pos1 = b.buscar(datos.clone(), c);
             puntosBinaria[i-1] = new Punto(i, b.getTotalTime());
             
