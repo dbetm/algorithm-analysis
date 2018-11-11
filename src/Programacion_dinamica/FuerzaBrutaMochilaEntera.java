@@ -12,13 +12,13 @@ import tools.Articulo;
  *
  * @author david
  */
-public class FuerzaBrutaMochilaDinamica {
+public class FuerzaBrutaMochilaEntera {
     private long initTime;
     private long endTime;
     private long totalTime;
     String combinacion;
     
-    public FuerzaBrutaMochilaDinamica() {
+    public FuerzaBrutaMochilaEntera() {
         this.initTime = 0;
         this.endTime = 0;
         this.totalTime = 0;
@@ -100,7 +100,7 @@ public class FuerzaBrutaMochilaDinamica {
         articulos.add(a4);
         Articulo.imprimirArticulos(articulos);
         
-        FuerzaBrutaMochilaDinamica mochila = new FuerzaBrutaMochilaDinamica();
+        FuerzaBrutaMochilaEntera mochila = new FuerzaBrutaMochilaEntera();
         int beneficio = mochila.calcularMayorBeneficio(articulos, 5);
         System.out.println("Beneficio: " + beneficio);
         System.out.println("Combinación maximizadora: " 

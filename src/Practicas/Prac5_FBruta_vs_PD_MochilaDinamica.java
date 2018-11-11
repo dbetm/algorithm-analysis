@@ -1,6 +1,6 @@
 package Practicas;
 
-import Programacion_dinamica.FuerzaBrutaMochilaDinamica;
+import Programacion_dinamica.FuerzaBrutaMochilaEntera;
 import Programacion_dinamica.MochilaDinamica;
 import java.util.ArrayList;
 import tools.Articulo;
@@ -16,7 +16,7 @@ public class Prac5_FBruta_vs_PD_MochilaDinamica {
     public static void main(String []args) {
         // Se instancian ambos algoritmos
         MochilaDinamica md = new MochilaDinamica();
-        FuerzaBrutaMochilaDinamica fbmd = new FuerzaBrutaMochilaDinamica();
+        FuerzaBrutaMochilaEntera fbmd = new FuerzaBrutaMochilaEntera();
 
         // ¿Hasta que n se va a probar el algoritmo?
         int n = 20;
