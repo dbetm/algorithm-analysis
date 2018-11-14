@@ -1,6 +1,7 @@
 package geneticoMochila;
 // Un individuo representan varios artículos, siendo así una tenativa de solución
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -31,7 +32,6 @@ public class Individuo {
     
     public Individuo(int[] genotipo) {
         this.genotipo = genotipo.clone();
-        this.fitness = 0;
         calcularFitness();
     }
     
@@ -46,6 +46,7 @@ public class Individuo {
     }
     
     public void calcularFitness() {
+        this.fitness = 0;
         // Recorre el genotipo para obtener su fitness
         for (int i = 0; i < this.genotipo.length; i++) {
             if(this.genotipo[i] == 1) 
@@ -60,10 +61,12 @@ public class Individuo {
         boolean ans = true;
         // Se recorre el genotipo
         for (int i = 0; i < this.genotipo.length; i++) {
-            acumulado += Genetico.articulos.get(i).getPeso();
-            if(acumulado > capacidad) {
-                ans = false;
-                break;
+            if(this.genotipo[i] == 1) {
+                acumulado += Genetico.articulos.get(i).getPeso();
+                if(acumulado > capacidad) {
+                    ans = false;
+                    break;
+                }
             }
         }
         return ans;
@@ -85,4 +88,20 @@ public class Individuo {
     public void setFitness(double fitness) {
         this.fitness = fitness;
     }
+
+    @Override
+    public String toString() {
+        String aux = "";
+        aux += "Su genotipo es: " + Arrays.toString(this.genotipo);
+        aux += "  -- Su fitness es: " + this.fitness;
+        //  Obtener peso
+        int peso = 0;
+        for (int i = 0; i < this.genotipo.length; i++) {
+            if(this.genotipo[i] == 1) peso += Genetico.articulos.get(i).getPeso();
+        }
+        aux += "-- Su peso es: " + peso;
+        return aux;
+    }
+    
+    
 }

@@ -83,10 +83,12 @@ public class FuerzaBrutaMochilaEntera {
 
     
     public static void main(String []args) {
-        Articulo a1 = new Articulo(3, 2);
-        Articulo a2 = new Articulo(10, 4);
-        Articulo a3 = new Articulo(5, 1);
-        Articulo a4 = new Articulo(15, 3);
+        Articulo a1 = new Articulo(15, 34);
+        Articulo a2 = new Articulo(4, 20);
+        Articulo a3 = new Articulo(3, 100);
+        Articulo a4 = new Articulo(56, 780);
+        Articulo a5 = new Articulo(23, 60);
+        Articulo a6 = new Articulo(4, 50);
         /*Articulo a1 = new Articulo(35, 4);
         Articulo a2 = new Articulo(10, 4);
         Articulo a3 = new Articulo(5, 1);
@@ -98,12 +100,14 @@ public class FuerzaBrutaMochilaEntera {
         articulos.add(a2);
         articulos.add(a3);
         articulos.add(a4);
+        articulos.add(a5);
+        articulos.add(a6);
         Articulo.imprimirArticulos(articulos);
         
         FuerzaBrutaMochilaEntera mochila = new FuerzaBrutaMochilaEntera();
-        int beneficio = mochila.calcularMayorBeneficio(articulos, 5);
+        int beneficio = mochila.calcularMayorBeneficio(articulos, 80);
         System.out.println("Beneficio: " + beneficio);
         System.out.println("Combinación maximizadora: " 
-            + mochila.obtenerCombinacionMaximizadora(5));
+            + mochila.obtenerCombinacionMaximizadora(80));
     }
 }
