@@ -16,7 +16,7 @@ public class Articulo {
         this.peso = 1;
     }
     
-    public Articulo(int beneficio, int peso) {
+    public Articulo(int peso, int beneficio) {
         this.beneficio = beneficio;
         this.peso = peso;
     }

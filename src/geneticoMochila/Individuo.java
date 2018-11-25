@@ -16,7 +16,7 @@ public class Individuo {
     los genes, el fitness es una de esas características que emergen de su genotipo*/
     
     // Bondad, como la suma de los beneficios que aporta el conjunto de artículos.
-    private double fitness;
+    private int fitness;
     
     // ### Constructores ###
     public Individuo(int numGenes) {
@@ -81,11 +81,11 @@ public class Individuo {
         this.genotipo = genotipo;
     }
 
-    public double getFitness() {
+    public int getFitness() {
         return fitness;
     }
 
-    public void setFitness(double fitness) {
+    public void setFitness(int fitness) {
         this.fitness = fitness;
     }
 
@@ -101,7 +101,5 @@ public class Individuo {
         }
         aux += "-- Su peso es: " + peso;
         return aux;
-    }
-    
-    
+    }  
 }

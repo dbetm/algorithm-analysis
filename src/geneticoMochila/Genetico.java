@@ -10,6 +10,7 @@
 package geneticoMochila;
 
 import java.util.ArrayList;
+import tools.Articulo;
 
 /**
  *
@@ -35,7 +36,9 @@ public class Genetico {
         this.capacidad = capacidad;
     }
     
-    public void evolucionar() {
+    public Individuo evolucionar() {
+        Individuo mejor = null;
+        
         // Generar una población aleatoria
         for (int i = 0; i < this.tamPoblacion; i++) {
             Individuo aux = new Individuo(this.numArticulos);
@@ -50,7 +53,7 @@ public class Genetico {
         // Se genera un proceso evolutivo
         for (int g = 0; g < this.numGeneraciones; g++) {
             // Construir una población nueva
-            Individuo mejor = this.poblacionActual.get(0);
+            mejor = this.poblacionActual.get(0);
             ArrayList<Individuo> nuevaPoblacion = new ArrayList<>();
             // se genera cada individuo de la nueva población
             for (int i = 0; i < this.tamPoblacion; i++) {
@@ -71,11 +74,13 @@ public class Genetico {
                 if(hijo.getFitness() > mejor.getFitness()) mejor = hijo;
                 nuevaPoblacion.add(hijo);
             }
-            System.out.println("El mejor es: " + mejor.toString());
+            //System.out.println("El mejor es: " + mejor.toString());
             // Actualizamos la generación actual
             this.poblacionActual.clear();
             this.poblacionActual = (ArrayList<Individuo>) nuevaPoblacion.clone();
+            //System.out.println("g " + g);
         }
+        return mejor;
     }
     
     public static void main(String []args) {
