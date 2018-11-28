@@ -24,7 +24,7 @@ public class HashingString {
         }
         return hash;
     }
-    
+    // Calcula el hash para una cadena teniendo ya las potencias calculadas
     public static long calcularHash(String s, long[] potencias) {
         long hash = 0;
         
@@ -34,7 +34,8 @@ public class HashingString {
         }
         return hash;
     }
-    
+    // Calcula los hashes para todos los prefijos de una cadena teniendo ya las
+    // potencias calculadas
     public static long[] calcularHashesPrefijos(String texto, long[] potencias) {
         long ans[] = new long[texto.length()+1];
         for (int i = 0; i < texto.length(); i++) {
