@@ -55,7 +55,7 @@ public class Prac7_empate_cadenas {
         textos[6] = textos[5] + textos[5];
         // Patrones a buscar
         String patrones[] = new String[]{"a", "as", "har", "diap"};
-        // Los tamaños de las entradas que nececitamos para graficar
+        // Los tamaños de las entradas que necesitamos para graficar
         int entradas[] = new int[]{10, 50, 100, 500, 10000, 50000, 100000};
         
         // Se declaran ambos algoritmos
