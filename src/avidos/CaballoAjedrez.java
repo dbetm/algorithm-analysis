@@ -1,6 +1,7 @@
 package avidos;
 
 import tools.Coordenada;
+import tools.Punto;
 
 /**
  *
